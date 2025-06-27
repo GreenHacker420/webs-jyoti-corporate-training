@@ -1,5 +1,7 @@
 "use client"
 
+import Link from "next/link"
+
 import Image from "next/image"
 import { Quote } from "lucide-react"
 
@@ -108,6 +110,19 @@ export function TestimonialTicker() {
             </div>
           ))}
         </div>
+
+      {/* View More Button */}
+      <div className="text-center mt-8">
+        <Link href="/testimonials">
+          <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-full hover:from-blue-700 hover:to-indigo-800 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center mx-auto space-x-2">
+            <span>View All Testimonials</span>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </button>
+        </Link>
+      </div>
+
       </div>
 
       <style jsx>{`

@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { TrainerAvatar } from "@/components/default-avatar"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Linkedin, Mail, Award, MapPin } from "lucide-react"
@@ -251,13 +252,13 @@ export default function TrainerTeamPage() {
                   <div className="p-6">
                     <div className="flex items-center mb-4">
                       <div className="relative">
-                        <Image
-                          src={`/placeholder.svg?height=80&width=80`}
-                          alt={trainer.name}
-                          width={80}
-                          height={80}
-                          className="rounded-full mr-4 border-2 border-blue-200 transform transition-all duration-300 hover:scale-110"
+                        <TrainerAvatar
+                          name={trainer.name}
+                          size="lg"
+                          className="mr-4 transform transition-all duration-300 hover:scale-110"
                         />
+
+
                         <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-2 border-white animate-pulse"></div>
                       </div>
                       <div>

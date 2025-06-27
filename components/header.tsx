@@ -17,7 +17,7 @@ export function Header() {
   }
 
   return (
-    <>
+    <div>
       {/* Top Header */}
       <div className="bg-gradient-to-r from-slate-800 to-slate-900 text-white py-3 px-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
@@ -125,6 +125,12 @@ export function Header() {
                 Gallery
               </Link>
               <Link
+                href="/testimonials"
+                className="px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-300 font-medium"
+              >
+                Testimonials
+              </Link>
+              <Link
                 href="/contact"
                 className="px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-300 font-medium"
               >
@@ -214,6 +220,14 @@ export function Header() {
                 <span>Gallery</span>
               </Link>
               <Link
+                href="/testimonials"
+                onClick={closeMobileMenu}
+                className="flex items-center space-x-3 px-6 py-4 text-gray-700 hover:text-blue-600 hover:bg-white transition-all duration-300 rounded-xl mx-2 font-medium"
+              >
+                <span className="text-xl">💬</span>
+                <span>Testimonials</span>
+              </Link>
+              <Link
                 href="/contact"
                 onClick={closeMobileMenu}
                 className="flex items-center space-x-3 px-6 py-4 text-gray-700 hover:text-blue-600 hover:bg-white transition-all duration-300 rounded-xl mx-2 font-medium"
@@ -233,6 +247,6 @@ export function Header() {
           </div>
         </div>
       </nav>
-    </>
+    </div>
   )
 }

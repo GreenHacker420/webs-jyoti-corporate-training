@@ -48,7 +48,7 @@ export function Footer() {
                   { name: "About Us", href: "/about" },
                   { name: "Training Modules", href: "/training-modules" },
                   { name: "Expert Trainers", href: "/trainer-team" },
-                  { name: "Locations", href: "/locations" },
+                  { name: "Testimonials", href: "/testimonials" },
                   { name: "Contact", href: "/contact" },
                 ].map((link) => (
                   <li key={link.name}>

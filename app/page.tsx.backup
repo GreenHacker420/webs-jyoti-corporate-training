@@ -6,7 +6,6 @@ import { EnhancedCard, GlowCard } from "@/components/ui/enhanced-card"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { TestimonialTicker } from "@/components/testimonial-ticker"
-import { TestimonialsSection } from "@/components/testimonials-section"
 import { FadeIn } from "@/components/animations/fade-in"
 import { Counter } from "@/components/animations/counter"
 import { FloatingCard } from "@/components/animations/floating-card"
@@ -268,19 +267,13 @@ export default function HomePage() {
         </div>
       </section>
 
-
-      {/* Testimonials Section */}
-      <SafeSection sectionName="Testimonials Section">
-        <TestimonialsSection />
-      </SafeSection>
-
       {/* Trusted Brands Section */}
       <SafeSection sectionName="Trusted Brands Section">
         <TrustedBrands />
       </SafeSection>
 
       {/* Testimonials Ticker */}
-      <SafeSection sectionName="Testimonials Ticker Section">
+      <SafeSection sectionName="Testimonials Section">
         <TestimonialTicker />
       </SafeSection>
 
