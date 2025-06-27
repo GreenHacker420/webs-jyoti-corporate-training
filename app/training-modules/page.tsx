@@ -142,7 +142,7 @@ export default function TrainingModulesPage() {
                       </Button>
                       <Link href="/contact">
                         <Button className="bg-blue-500 hover:bg-blue-600" size="sm">
-                          Enroll Now
+                          Hire a Trainer
                         </Button>
                       </Link>
                     </div>
