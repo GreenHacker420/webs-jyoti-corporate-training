@@ -102,21 +102,28 @@ ${colorConfig
 
 const ChartTooltip = RechartsPrimitive.Tooltip
 
-const ChartTooltipContent = React.forwardRef<
-  HTMLDivElement,
-  React.ComponentProps<typeof RechartsPrimitive.Tooltip> &
-    React.ComponentProps<"div"> & {
-      hideLabel?: boolean
-      hideIndicator?: boolean
-      indicator?: "line" | "dot" | "dashed"
-      nameKey?: string
-      labelKey?: string
-    }
->(
+// Create a custom type for ChartTooltipContent to avoid conflicts
+
+// Finalize CustomTooltipProps to include all necessary properties
+
+type CustomTooltipProps = React.ComponentProps<typeof RechartsPrimitive.Tooltip> & {
+  payload?: PayloadItem[]
+  label?: string
+  hideLabel?: boolean
+  hideIndicator?: boolean
+  indicator?: "line" | "dot" | "dashed"
+  nameKey?: string
+  labelKey?: string
+  className?: string
+  color?: string
+}
+
+// Ensure CustomTooltipProps is used exclusively
+const ChartTooltipContent = React.forwardRef<HTMLDivElement, CustomTooltipProps>(
   (
     {
       active,
-      payload,
+      payload = [],
       className,
       indicator = "dot",
       hideLabel = false,
@@ -134,7 +141,7 @@ const ChartTooltipContent = React.forwardRef<
     const { config } = useChart()
 
     const tooltipLabel = React.useMemo(() => {
-      if (hideLabel || !payload?.length) {
+      if (hideLabel || !payload.length) {
         return null
       }
 
@@ -169,7 +176,7 @@ const ChartTooltipContent = React.forwardRef<
       labelKey,
     ])
 
-    if (!active || !payload?.length) {
+    if (!active || !payload.length) {
       return null
     }
 
@@ -185,10 +192,10 @@ const ChartTooltipContent = React.forwardRef<
       >
         {!nestLabel ? tooltipLabel : null}
         <div className="grid gap-1.5">
-          {payload.map((item, index) => {
+          {payload.map((item: PayloadItem, index: number) => {
             const key = `${nameKey || item.name || item.dataKey || "value"}`
             const itemConfig = getPayloadConfigFromPayload(config, item, key)
-            const indicatorColor = color || item.payload.fill || item.color
+            const indicatorColor = color || item.fill || item.color
 
             return (
               <div
@@ -199,7 +206,7 @@ const ChartTooltipContent = React.forwardRef<
                 )}
               >
                 {formatter && item?.value !== undefined && item.name ? (
-                  formatter(item.value, item.name, item, index, item.payload)
+                  formatter(item.value, item.name, item, index, payload)
                 ) : (
                   <>
                     {itemConfig?.icon ? (
@@ -261,18 +268,19 @@ const ChartLegend = RechartsPrimitive.Legend
 const ChartLegendContent = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<"div"> &
-    Pick<RechartsPrimitive.LegendProps, "payload" | "verticalAlign"> & {
+    Pick<RechartsPrimitive.LegendProps, "verticalAlign"> & {
       hideIcon?: boolean
       nameKey?: string
+      payload?: PayloadItem[]
     }
 >(
   (
-    { className, hideIcon = false, payload, verticalAlign = "bottom", nameKey },
+    { className, hideIcon = false, payload = [], verticalAlign = "bottom", nameKey },
     ref
   ) => {
     const { config } = useChart()
 
-    if (!payload?.length) {
+    if (!payload.length) {
       return null
     }
 
@@ -315,6 +323,17 @@ const ChartLegendContent = React.forwardRef<
   }
 )
 ChartLegendContent.displayName = "ChartLegend"
+
+// Define PayloadItem explicitly within the file
+
+interface PayloadItem {
+  name?: string
+  dataKey?: string
+  value?: number | string
+  color?: string
+  fill?: string
+  payload?: Record<string, unknown>
+}
 
 // Helper to extract item config from a payload.
 function getPayloadConfigFromPayload(

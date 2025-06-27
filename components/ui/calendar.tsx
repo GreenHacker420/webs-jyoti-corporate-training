@@ -9,6 +9,45 @@ import { buttonVariants } from "@/components/ui/button"
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>
 
+interface NavigationProps {
+  nextMonth: Date | undefined
+  previousMonth: Date | undefined
+  onNextClick: () => void
+  onPrevClick: () => void
+}
+
+const CustomNavigation: React.FC<NavigationProps> = ({
+  nextMonth,
+  previousMonth,
+  onNextClick,
+  onPrevClick,
+}) => (
+  <div className="flex items-center space-x-2">
+    <button
+      type="button"
+      onClick={onPrevClick}
+      disabled={!previousMonth}
+      className={cn(
+        buttonVariants({ variant: "outline" }),
+        "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100"
+      )}
+    >
+      <ChevronLeft className="h-4 w-4" />
+    </button>
+    <button
+      type="button"
+      onClick={onNextClick}
+      disabled={!nextMonth}
+      className={cn(
+        buttonVariants({ variant: "outline" }),
+        "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100"
+      )}
+    >
+      <ChevronRight className="h-4 w-4" />
+    </button>
+  </div>
+)
+
 function Calendar({
   className,
   classNames,
@@ -52,10 +91,6 @@ function Calendar({
           "aria-selected:bg-accent aria-selected:text-accent-foreground",
         day_hidden: "invisible",
         ...classNames,
-      }}
-      components={{
-        IconLeft: ({ ...props }) => <ChevronLeft className="h-4 w-4" />,
-        IconRight: ({ ...props }) => <ChevronRight className="h-4 w-4" />,
       }}
       {...props}
     />

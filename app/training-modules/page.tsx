@@ -191,7 +191,7 @@ export default function TrainingModulesPage() {
         </div>
       </section>
 
-      <TrainingModuleModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <TrainingModuleModal isOpen={isModalOpen} onCloseAction={() => setIsModalOpen(false)} />
 
       <Footer />
     </div>

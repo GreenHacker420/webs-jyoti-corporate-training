@@ -5,16 +5,16 @@ import { X } from "lucide-react"
 
 interface TrainingModuleModalProps {
   isOpen: boolean
-  onClose: () => void
+  onCloseAction: () => void // Renamed from onClose to onCloseAction
 }
 
-export function TrainingModuleModal({ isOpen, onClose }: TrainingModuleModalProps) {
+export function TrainingModuleModal({ isOpen, onCloseAction }: TrainingModuleModalProps) {
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
+    <Dialog open={isOpen} onOpenChange={onCloseAction}> {/* Updated prop name */}
       <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-gray-800">Training Module Details</DialogTitle>
-          <Button variant="ghost" size="icon" className="absolute right-4 top-4" onClick={onClose}>
+          <Button variant="ghost" size="icon" className="absolute right-4 top-4" onClick={onCloseAction}> {/* Updated prop name */}
             <X className="h-4 w-4" />
           </Button>
         </DialogHeader>

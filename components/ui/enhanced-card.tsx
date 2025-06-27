@@ -22,12 +22,20 @@ export const EnhancedCard = React.forwardRef<HTMLDivElement, EnhancedCardProps>(
               y: -4,
               boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
             },
-            transition: { type: "spring", stiffness: 300, damping: 20 }
+            transition: {
+              type: "spring" as const, // Explicitly type as 'spring'
+              stiffness: 300,
+              damping: 20,
+            },
           }
         case "float":
           return {
             animate: { y: [-2, 2, -2] },
-            transition: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+            transition: {
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut" as const, // Explicitly type as 'easeInOut'
+            },
             whileHover: { scale: hoverScale }
           }
         case "glow":
@@ -46,7 +54,11 @@ export const EnhancedCard = React.forwardRef<HTMLDivElement, EnhancedCardProps>(
               scale: hoverScale,
               transformPerspective: 1000
             },
-            transition: { type: "spring", stiffness: 300, damping: 20 }
+            transition: {
+              type: "spring" as const, // Explicitly type as 'spring'
+              stiffness: 300,
+              damping: 20,
+            }
           }
         default:
           return {}

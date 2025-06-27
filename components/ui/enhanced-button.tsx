@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import { Button, ButtonProps } from "./button"
 import { cn } from "@/lib/utils"
 
-interface EnhancedButtonProps extends ButtonProps {
+interface EnhancedButtonProps extends Omit<ButtonProps, "variant"> {
   variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link" | "gradient" | "glow"
   animation?: "none" | "bounce" | "scale" | "pulse" | "glow"
   glowColor?: string
@@ -30,18 +30,18 @@ export const EnhancedButton = React.forwardRef<HTMLButtonElement, EnhancedButton
           return {
             whileHover: { y: -2 },
             whileTap: { y: 0 },
-            transition: { type: "spring", stiffness: 400, damping: 10 }
+            transition: { type: "spring", stiffness: 400, damping: 10 } as const
           }
         case "scale":
           return {
             whileHover: { scale: 1.05 },
             whileTap: { scale: 0.95 },
-            transition: { type: "spring", stiffness: 400, damping: 10 }
+            transition: { type: "spring", stiffness: 400, damping: 10 } as const
           }
         case "pulse":
           return {
             animate: { scale: [1, 1.02, 1] },
-            transition: { duration: 2, repeat: Infinity, ease: "easeInOut" }
+            transition: { duration: 2, repeat: Infinity, ease: "easeInOut" } as const
           }
         case "glow":
           return {
@@ -49,7 +49,7 @@ export const EnhancedButton = React.forwardRef<HTMLButtonElement, EnhancedButton
               boxShadow: `0 0 20px rgba(59, 130, 246, 0.5)`,
               scale: 1.02
             },
-            transition: { duration: 0.3 }
+            transition: { duration: 0.3 } as const
           }
         default:
           return {}
