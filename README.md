@@ -40,7 +40,7 @@ Webs Jyoti Corporate Training is a comprehensive web platform designed to showca
 
 ### Prerequisites
 - Node.js 18.0 or higher
-- npm, yarn, or pnpm package manager
+- npm package manager
 
 ### Quick Start
 
@@ -53,19 +53,11 @@ Webs Jyoti Corporate Training is a comprehensive web platform designed to showca
 2. **Install dependencies**
    ```bash
    npm install
-   # or
-   yarn install
-   # or
-   pnpm install
    ```
 
 3. **Run the development server**
    ```bash
    npm run dev
-   # or
-   yarn dev
-   # or
-   pnpm dev
    ```
 
 4. **Open your browser**
