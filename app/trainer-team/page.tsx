@@ -121,29 +121,29 @@ export default function TrainerTeamPage() {
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Industry Experience</h3>
+              <h3 className="text-xl font-semibold mb-3 text-black">Industry Experience</h3>
               <p className="text-gray-600">All trainers have 8+ years of hands-on industry experience</p>
             </div>
             <div className="text-center">
               <div className="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🎓</span>
               </div>
-              <h3 className="text-xl font-semibold mb-3">Certified Professionals</h3>
+              <h3 className="text-xl font-semibold mb-3 text-black">Certified Professionals</h3>
               <p className="text-gray-600">Multiple industry certifications and continuous learning</p>
             </div>
             <div className="text-center">
               <div className="bg-cyan-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">👥</span>
               </div>
-              <h3 className="text-xl font-semibold mb-3">Local Expertise</h3>
+              <h3 className="text-xl font-semibold mb-3 text-black">Local Expertise</h3>
               <p className="text-gray-600">Regional trainers understanding local business needs</p>
             </div>
             <div className="text-center">
               <div className="bg-sky-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🏆</span>
               </div>
-              <h3 className="text-xl font-semibold mb-3">Training Excellence</h3>
-              <p className="text-gray-600">Proven track record with 9,375+ successful students</p>
+                <h3 className="text-xl font-semibold mb-3 text-black">Training Excellence</h3>
+              <p className="text-gray-600">Proven track record with 17,375+ successful students</p>
             </div>
           </div>
         </div>
