@@ -80,29 +80,35 @@ export function TestimonialTicker() {
       <div className="relative">
         <div className="flex animate-scroll-left">
           {duplicatedTestimonials.map((testimonial, index) => (
-            <div key={`${testimonial.id}-${index}`} className="flex-shrink-0 w-96 mx-4">
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 h-full">
-                <div className="flex items-start mb-4">
-                  <Quote className="w-8 h-8 text-blue-600 mr-3 flex-shrink-0 mt-1" />
-                  <p className="text-gray-700 text-sm leading-relaxed italic">"{testimonial.quote}"</p>
-                </div>
-
-                <div className="flex items-center justify-between mt-6 pt-4 border-t border-gray-100">
-                  <div className="flex-1">
-                    <h4 className="font-semibold text-gray-900 text-sm">{testimonial.name}</h4>
-                    <p className="text-gray-600 text-xs">{testimonial.designation}</p>
-                    <p className="text-blue-600 text-xs font-medium">{testimonial.company}</p>
+            <div
+              key={`${testimonial.id}-${index}`}
+              className="flex-shrink-0 w-96 mx-4 transition-transform duration-300 transform hover:scale-105 hover:z-10"
+            >
+              <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 h-full relative hover:shadow-2xl">
+                <div className="absolute inset-0 bg-white opacity-80 blur-lg transition-opacity duration-300 hover:opacity-100"></div>
+                <div className="relative z-10">
+                  <div className="flex items-start mb-4">
+                    <Quote className="w-8 h-8 text-blue-600 mr-3 flex-shrink-0 mt-1" />
+                    <p className="text-gray-700 text-sm leading-relaxed italic">"{testimonial.quote}"</p>
                   </div>
 
-                  <div className="flex-shrink-0 ml-4">
-                    <div className="w-12 h-12 bg-gray-50 rounded-lg flex items-center justify-center overflow-hidden">
-                      <Image
-                        src={testimonial.logo || "/placeholder.svg"}
-                        alt={`${testimonial.company} logo`}
-                        width={40}
-                        height={40}
-                        className="object-contain"
-                      />
+                  <div className="flex items-center justify-between mt-6 pt-4 border-t border-gray-100">
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-gray-900 text-sm">{testimonial.name}</h4>
+                      <p className="text-gray-600 text-xs">{testimonial.designation}</p>
+                      <p className="text-blue-600 text-xs font-medium">{testimonial.company}</p>
+                    </div>
+
+                    <div className="flex-shrink-0 ml-4">
+                      <div className="w-12 h-12 bg-gray-50 rounded-lg flex items-center justify-center overflow-hidden">
+                        <Image
+                          src={testimonial.logo || "/placeholder.svg"}
+                          alt={`${testimonial.company} logo`}
+                          width={40}
+                          height={40}
+                          className="object-contain"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
