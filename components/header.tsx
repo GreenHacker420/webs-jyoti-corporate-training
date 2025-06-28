@@ -98,7 +98,9 @@ export function Header() {
                       Training Modules
                     </Link>
                     <Link
-                      href="/lms"
+                      href="https://corporate.websjyoti.com/hr_login.php"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-300"
                     >
                       LMS Platform
@@ -204,7 +206,9 @@ export function Header() {
                 <span>Locations</span>
               </Link>
               <Link
-                href="/lms"
+                href="https://corporate.websjyoti.com/hr_login.php"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={closeMobileMenu}
                 className="flex items-center space-x-3 px-6 py-4 text-gray-700 hover:text-blue-600 hover:bg-white transition-all duration-300 rounded-xl mx-2 font-medium"
               >
