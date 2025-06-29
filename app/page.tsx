@@ -11,11 +11,9 @@ import { FadeIn } from "@/components/animations/fade-in"
 import { Counter } from "@/components/animations/counter"
 import { FloatingCard } from "@/components/animations/floating-card"
 import { StaggerContainer } from "@/components/animations/stagger-container"
-
 import { SafeSection } from "@/components/error-boundary"
 import { TrustedBrands } from "@/components/trusted-brands"
-import { Play, ArrowRight, CheckCircle, Star, Users, Award, Clock, BookOpen } from "lucide-react"
-import { Analytics } from "@vercel/analytics/next"
+import { Play, ArrowRight, CheckCircle, Star, Users, Award, BookOpen } from "lucide-react"
 
 export default function HomePage() {
   return (
