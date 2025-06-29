@@ -111,7 +111,7 @@ export default function LocationsPage() {
           <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">Our Nationwide Presence</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">22+</div>
+              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">55+</div>
               <div className="text-gray-600 font-medium">Cities Covered</div>
             </div>
             <div>
@@ -119,11 +119,11 @@ export default function LocationsPage() {
               <div className="text-gray-600 font-medium">Expert Trainers</div>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">15+</div>
+              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">55+</div>
               <div className="text-gray-600 font-medium">States</div>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">9,375+</div>
+              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">17,375+</div>
               <div className="text-gray-600 font-medium">Students Trained</div>
             </div>
           </div>

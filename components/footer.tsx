@@ -119,7 +119,7 @@ export function Footer() {
                   </div>
                   <div>
                     <p className="text-white font-medium">Gurugram, India</p>
-                    <p className="text-gray-400 text-sm">22+ cities across India</p>
+                    <p className="text-gray-400 text-sm">55+ cities across India</p>
                   </div>
                 </div>
               </div>
@@ -132,7 +132,7 @@ export function Footer() {
       <div className="border-t border-gray-700 py-8">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-400 text-sm">&copy; 2024 Corporate Training Programs. All rights reserved.</p>
+            <p className="text-gray-400 text-sm">&copy; 2025 Corporate Training Programs. All rights reserved.</p>
             <div className="flex items-center space-x-6 text-sm">
               <Link href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                 Privacy Policy
