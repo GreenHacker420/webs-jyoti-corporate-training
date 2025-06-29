@@ -97,14 +97,14 @@ export function Header() {
                     >
                       Training Modules
                     </Link>
-                    <Link
+                    <a
                       href="https://corporate.websjyoti.com/hr_login.php"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-300"
                     >
                       LMS Platform
-                    </Link>
+                    </a>
                     <Link
                       href="/trainer-team"
                       className="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-300"
@@ -205,7 +205,7 @@ export function Header() {
                 <span className="text-xl">📍</span>
                 <span>Locations</span>
               </Link>
-              <Link
+              <a
                 href="https://corporate.websjyoti.com/hr_login.php"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -214,7 +214,7 @@ export function Header() {
               >
                 <span className="text-xl">💻</span>
                 <span>LMS Platform</span>
-              </Link>
+              </a>
               <Link
                 href="/gallery"
                 onClick={closeMobileMenu}
