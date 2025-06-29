@@ -15,6 +15,7 @@ import { StaggerContainer } from "@/components/animations/stagger-container"
 import { SafeSection } from "@/components/error-boundary"
 import { TrustedBrands } from "@/components/trusted-brands"
 import { Play, ArrowRight, CheckCircle, Star, Users, Award, Clock, BookOpen } from "lucide-react"
+import { Analytics } from "@vercel/analytics/next"
 
 export default function HomePage() {
   return (
