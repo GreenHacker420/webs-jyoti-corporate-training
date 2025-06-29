@@ -31,46 +31,68 @@ export function TrainingModuleModal({ isOpen, onCloseAction }: TrainingModuleMod
 
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-blue-50 p-6 rounded-lg">
-              <h4 className="font-semibold text-gray-800 mb-3">Data Analytics Fundamentals</h4>
+              <h4 className="font-semibold text-gray-800 mb-3">Data Analytics</h4>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• Statistical Analysis and Methods</li>
-                <li>• Data Collection and Cleaning</li>
-                <li>• Data Visualization Techniques</li>
-                <li>• Reporting and Presentation</li>
-                <li>• Industry Case Studies</li>
+                <li>• Statistical Analysis</li>
+                <li>• Data Visualization</li>
+                <li>• Data Cleaning</li>
+                <li>• Reporting</li>
+                <li>• Business Intelligence</li>
               </ul>
             </div>
 
             <div className="bg-green-50 p-6 rounded-lg">
-              <h4 className="font-semibold text-gray-800 mb-3">Advanced Excel Mastery</h4>
+              <h4 className="font-semibold text-gray-800 mb-3">Advanced Excel</h4>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• Advanced Functions and Formulas</li>
-                <li>• Pivot Tables and Charts</li>
-                <li>• Macros and VBA Programming</li>
-                <li>• Data Analysis Tools</li>
+                <li>• Pivot Tables</li>
+                <li>• Advanced Functions</li>
+                <li>• VBA Programming</li>
+                <li>• Macros</li>
                 <li>• Dashboard Creation</li>
               </ul>
             </div>
 
             <div className="bg-purple-50 p-6 rounded-lg">
-              <h4 className="font-semibold text-gray-800 mb-3">Power BI Professional</h4>
+              <h4 className="font-semibold text-gray-800 mb-3">Power BI</h4>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• Data Modeling and Relationships</li>
-                <li>• DAX Functions and Calculations</li>
-                <li>• Interactive Visualizations</li>
-                <li>• Report and Dashboard Design</li>
-                <li>• Power Query and ETL</li>
+                <li>• DAX Formulas</li>
+                <li>• Data Modeling</li>
+                <li>• Visualizations</li>
+                <li>• Power Query</li>
+                <li>• Reports</li>
               </ul>
             </div>
 
             <div className="bg-orange-50 p-6 rounded-lg">
-              <h4 className="font-semibold text-gray-800 mb-3">MIS Reporting Excellence</h4>
+              <h4 className="font-semibold text-gray-800 mb-3">Sales Tools</h4>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• Report Design and Structure</li>
-                <li>• KPI Development and Tracking</li>
-                <li>• Automated Reporting Systems</li>
-                <li>• Data Integration Techniques</li>
-                <li>• Executive Dashboard Creation</li>
+                <li>• CRM Systems</li>
+                <li>• Sales Analytics</li>
+                <li>• Pipeline Management</li>
+                <li>• Lead Generation</li>
+                <li>• Customer Insights</li>
+              </ul>
+            </div>
+
+            <div className="bg-pink-50 p-6 rounded-lg">
+              <h4 className="font-semibold text-gray-800 mb-3">Soft Skills</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li>• Leadership</li>
+                <li>• Communication</li>
+                <li>• Team Building</li>
+                <li>• Conflict Resolution</li>
+                <li>• Presentation Skills</li>
+              </ul>
+            </div>
+
+            <div className="bg-indigo-50 p-6 rounded-lg">
+              <h4 className="font-semibold text-gray-800 mb-3">Digital Marketing</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li>• SEO Optimization</li>
+                <li>• Social Media Marketing</li>
+                <li>• Content Strategy</li>
+                <li>• Analytics</li>
+                <li>• Campaign Management</li>
               </ul>
             </div>
           </div>

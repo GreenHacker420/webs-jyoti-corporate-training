@@ -52,7 +52,7 @@ export default function AboutPage() {
             </div>
             <div className="bg-gradient-to-br from-orange-100 to-yellow-100 p-8 rounded-2xl">
               <Image
-                src="/hirdesh-image.png"
+                src="/hirdesh_img.jpg"
                 alt="Hirdesh - Expert Trainer at Webs Jyoti"
                 width={500}
                 height={400}
