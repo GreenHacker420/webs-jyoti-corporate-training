@@ -48,7 +48,7 @@ export function Header() {
       </div>
 
       {/* Navigation */}
-      <nav className="bg-white shadow-xl border-b border-blue-50 sticky top-0 z-header relative">
+      <nav className="bg-white shadow-xl border-b border-blue-50 sticky top-0 z-header">
         <div className="max-w-7xl mx-auto px-4 relative z-header">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center">
