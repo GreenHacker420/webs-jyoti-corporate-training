@@ -14,63 +14,57 @@ export default function TrainingModulesPage() {
   const modules = [
     {
       id: 1,
-      title: "Data Analytics Fundamentals",
+      title: "Data Analytics",
       level: "Beginner",
       description:
-        "Strengthen foundational knowledge of data analytics concepts with hands-on practice in statistical analysis and reporting.",
-      topics: ["Statistics Basics", "Data Collection", "Data Cleaning", "Basic Analysis", "Reporting"],
-      certification: "Data Analytics Foundation Certificate",
+        "Master statistical analysis and data visualization techniques for effective business decision-making and insights generation.",
+      topics: ["Statistical Analysis", "Data Visualization", "Data Cleaning", "Reporting", "Business Intelligence"],
+      certification: "Data Analytics Professional Certificate",
     },
     {
       id: 2,
-      title: "Advanced Excel Mastery",
+      title: "Advanced Excel",
       level: "Intermediate",
       description:
-        "Enhance Excel proficiency with advanced features, automation techniques, and dashboard creation for business applications.",
-      topics: ["Pivot Tables", "Advanced Functions", "Macros & VBA", "Data Validation", "Dashboard Creation"],
+        "Enhance Excel proficiency with advanced features, VBA programming, automation techniques, and dashboard creation for business applications.",
+      topics: ["Pivot Tables", "Advanced Functions", "VBA Programming", "Macros", "Dashboard Creation"],
       certification: "Excel Expert Certificate",
     },
     {
       id: 3,
-      title: "Power BI Professional",
+      title: "Power BI",
       level: "Intermediate",
       description:
-        "Strengthen working knowledge of Power BI with dashboard-building, data modeling, and hands-on DAX practice.",
-      topics: ["DAX", "Visualizations", "Power Query", "Reports"],
+        "Master Power BI for creating interactive dashboards, data modeling, and business intelligence solutions for organizational insights.",
+      topics: ["DAX Formulas", "Data Modeling", "Visualizations", "Power Query", "Reports"],
       certification: "Power BI Professional Certificate",
     },
     {
       id: 4,
-      title: "MIS Reporting Excellence",
+      title: "Sales Tools",
       level: "Intermediate",
       description:
-        "Develop expertise in creating effective MIS reports and automated systems for business intelligence.",
-      topics: ["Report Design", "KPI Development", "Automation", "Data Integration", "Executive Dashboards"],
-      certification: "MIS Specialist Certificate",
+        "Comprehensive training on CRM systems, sales analytics, pipeline management, and customer relationship optimization.",
+      topics: ["CRM Systems", "Sales Analytics", "Pipeline Management", "Lead Generation", "Customer Insights"],
+      certification: "Sales Tools Specialist Certificate",
     },
     {
       id: 5,
-      title: "Business Intelligence Suite",
-      level: "Advanced",
+      title: "Soft Skills",
+      level: "Beginner",
       description:
-        "Enterprise-focused BI training with hands-on practice across tools like Power BI, Tableau, SQL, and ETL — designed to build end-to-end reporting and decision systems.",
-      topics: ["SQL Basics", "Tableau", "Power BI", "Data Warehousing", "ETL Processes"],
-      certification: "Business Intelligence Expert Certificate",
+        "Develop essential leadership, communication, and team collaboration skills for professional growth and organizational success.",
+      topics: ["Leadership", "Communication", "Team Building", "Conflict Resolution", "Presentation Skills"],
+      certification: "Soft Skills Professional Certificate",
     },
     {
       id: 6,
-      title: "Corporate Analytics Program",
-      level: "Advanced",
+      title: "Digital Marketing",
+      level: "Intermediate",
       description:
-        "Advanced program designed for corporate analytics professionals focusing on strategic decision-making and predictive analytics.",
-      topics: [
-        "Advanced Statistics",
-        "Predictive Analytics",
-        "Machine Learning Basics",
-        "Big Data Concepts",
-        "Strategy",
-      ],
-      certification: "Corporate Analytics Professional Certificate",
+        "Comprehensive digital marketing training covering SEO, social media marketing, and digital campaign management strategies.",
+      topics: ["SEO Optimization", "Social Media Marketing", "Content Strategy", "Analytics", "Campaign Management"],
+      certification: "Digital Marketing Professional Certificate",
     },
   ]
 

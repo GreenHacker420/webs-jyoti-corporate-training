@@ -196,23 +196,18 @@ export default function HomePage() {
                   {[
                     {
                       icon: Users,
-                      title: "Expert-Led Training for Corporate Teams",
-                      desc: "Industry professionals with 10+ years of experience",
+                      title: "Dedicated Corporate LMS for Training",
+                      desc: "Comprehensive learning management system for seamless corporate training delivery",
                     },
                     {
                       icon: Award,
-                      title: "Certified Programs with HR-Reporting",
-                      desc: "Industry-recognized certifications with detailed progress tracking",
+                      title: "Pan India Presence",
+                      desc: "Training services available across 55+ cities with local expert trainers",
                     },
                     {
                       icon: BookOpen,
-                      title: "Real-World, Project-Based Learning",
-                      desc: "Hands-on training with business-relevant case studies",
-                    },
-                    {
-                      icon: Clock,
-                      title: "Flexible Delivery: Online, On-site & Hybrid",
-                      desc: "Multiple delivery modes to suit your organization's needs",
+                      title: "15+ Years Service",
+                      desc: "Proven track record of excellence in corporate training and skill development",
                     },
                   ].map((item, index) => (
                     <div key={index} className="flex items-start space-x-4 group">
@@ -230,13 +225,13 @@ export default function HomePage() {
             </FadeIn>
 
             <FadeIn direction="right" delay={300}>
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
                 <FloatingCard className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
                   <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
                     <span className="text-white font-bold">📊</span>
                   </div>
                   <h4 className="font-bold text-gray-900 mb-2">Data Analytics</h4>
-                  <p className="text-gray-600 text-sm">Master statistical analysis and data visualization</p>
+                  <p className="text-gray-600 text-sm">Master statistical analysis and data visualization techniques</p>
                 </FloatingCard>
 
                 <FloatingCard className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100" delay={100}>
@@ -244,7 +239,7 @@ export default function HomePage() {
                     <span className="text-white font-bold">📈</span>
                   </div>
                   <h4 className="font-bold text-gray-900 mb-2">Advanced Excel</h4>
-                  <p className="text-gray-600 text-sm">Pivot tables, macros, and automation</p>
+                  <p className="text-gray-600 text-sm">Pivot tables, macros, VBA, and automation</p>
                 </FloatingCard>
 
                 <FloatingCard className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100" delay={200}>
@@ -252,15 +247,31 @@ export default function HomePage() {
                     <span className="text-white font-bold">📋</span>
                   </div>
                   <h4 className="font-bold text-gray-900 mb-2">Power BI</h4>
-                  <p className="text-gray-600 text-sm">Interactive dashboards and reports</p>
+                  <p className="text-gray-600 text-sm">Interactive dashboards and business intelligence</p>
                 </FloatingCard>
 
                 <FloatingCard className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100" delay={300}>
                   <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4">
-                    <span className="text-white font-bold">📊</span>
+                    <span className="text-white font-bold">💼</span>
                   </div>
-                  <h4 className="font-bold text-gray-900 mb-2">MIS Reporting</h4>
-                  <p className="text-gray-600 text-sm">Automated reporting systems</p>
+                  <h4 className="font-bold text-gray-900 mb-2">Sales Tools</h4>
+                  <p className="text-gray-600 text-sm">CRM systems, sales analytics, and pipeline management</p>
+                </FloatingCard>
+
+                <FloatingCard className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100" delay={400}>
+                  <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mb-4">
+                    <span className="text-white font-bold">🤝</span>
+                  </div>
+                  <h4 className="font-bold text-gray-900 mb-2">Soft Skills</h4>
+                  <p className="text-gray-600 text-sm">Leadership, communication, and team collaboration</p>
+                </FloatingCard>
+
+                <FloatingCard className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100" delay={500}>
+                  <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4">
+                    <span className="text-white font-bold">📱</span>
+                  </div>
+                  <h4 className="font-bold text-gray-900 mb-2">Digital Marketing</h4>
+                  <p className="text-gray-600 text-sm">SEO, social media, and digital campaign management</p>
                 </FloatingCard>
               </div>
             </FadeIn>
