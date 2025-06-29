@@ -4,232 +4,9 @@ import { MapPin, Phone, Clock, Users } from "lucide-react"
 import { FadeIn } from "@/components/animations/fade-in"
 import { FloatingCard } from "@/components/animations/floating-card"
 import { StaggerContainer } from "@/components/animations/stagger-container"
+import locations, { Location } from "../../data/locations";
 
 export default function LocationsPage() {
-  const locations = [
-    {
-      id: 1,
-      city: "AGRA",
-      trainer: "Ujjwal Garg",
-      address: "Training Center, Agra, Uttar Pradesh",
-      phone: "+91 8802000175",
-      email: "agra@webjyoti.com",
-      facilities: ["Training Rooms", "Computer Lab", "Parking"],
-      timings: "Mon-Fri: 9:00 AM - 6:00 PM",
-    },
-    {
-      id: 2,
-      city: "RAIPUR",
-      trainer: "Kishore Kumar",
-      address: "Training Center, Raipur, Chhattisgarh",
-      phone: "+91 8802000176",
-      email: "raipur@webjyoti.com",
-      facilities: ["Training Rooms", "Computer Lab", "Conference Hall"],
-      timings: "Mon-Fri: 9:00 AM - 6:00 PM",
-    },
-    {
-      id: 3,
-      city: "BHOPAL",
-      trainer: "Akshat Dubey",
-      address: "Training Center, Bhopal, Madhya Pradesh",
-      phone: "+91 8802000177",
-      email: "bhopal@webjyoti.com",
-      facilities: ["Training Rooms", "Computer Lab", "Library"],
-      timings: "Mon-Fri: 9:00 AM - 6:00 PM",
-    },
-    {
-      id: 4,
-      city: "INDORE",
-      trainer: "Sanskar Singh",
-      address: "Training Center, Indore, Madhya Pradesh",
-      phone: "+91 8802000178",
-      email: "indore@webjyoti.com",
-      facilities: ["Training Rooms", "Computer Lab", "Cafeteria"],
-      timings: "Mon-Fri: 9:00 AM - 6:00 PM",
-    },
-    {
-      id: 5,
-      city: "JODHPUR",
-      trainer: "Bhavendra Singh",
-      address: "Training Center, Jodhpur, Rajasthan",
-      phone: "+91 8802000179",
-      email: "jodhpur@webjyoti.com",
-      facilities: ["Training Rooms", "Computer Lab", "Parking"],
-      timings: "Mon-Fri: 9:00 AM - 6:00 PM",
-    },
-    {
-      id: 6,
-      city: "BHATINDA",
-      trainer: "Gurpreet Singh",
-      address: "Training Center, Bhatinda, Punjab",
-      phone: "+91 8802000180",
-      email: "bhatinda@webjyoti.com",
-      facilities: ["Training Rooms", "Computer Lab", "Reception"],
-      timings: "Mon-Fri: 9:00 AM - 6:00 PM",
-    },
-    {
-      id: 7,
-      city: "Delhi NCR",
-      trainer: "Hirdesh Bhardwaj",
-      address: "M 24 Old DLF Colony, Sector 14, Gurugram, Haryana",
-      phone: "+91 8802000175",
-      email: "delhi@webjyoti.com",
-      facilities: ["Training Rooms", "Computer Lab", "Conference Hall", "Parking"],
-      timings: "Mon-Fri: 9:00 AM - 6:00 PM",
-      isHeadquarters: true,
-    },
-    {
-      id: 8,
-      city: "PUNE",
-      trainer: "Mahesh Gutalkar",
-      address: "Training Center, Pune, Maharashtra",
-      phone: "+91 8802000181",
-      email: "pune@webjyoti.com",
-      facilities: ["Training Rooms", "Computer Lab", "Cafeteria"],
-      timings: "Mon-Fri: 9:00 AM - 6:00 PM",
-    },
-    {
-      id: 9,
-      city: "Azamgarh",
-      trainer: "Brijesh Kumar Chaurasia",
-      address: "Training Center, Azamgarh, Uttar Pradesh",
-      phone: "+91 8802000182",
-      email: "azamgarh@webjyoti.com",
-      facilities: ["Training Rooms", "Computer Lab"],
-      timings: "Mon-Fri: 9:00 AM - 6:00 PM",
-    },
-    {
-      id: 10,
-      city: "LUCKNOW",
-      trainer: "Sangram Singh",
-      address: "Training Center, Lucknow, Uttar Pradesh",
-      phone: "+91 8802000183",
-      email: "lucknow@webjyoti.com",
-      facilities: ["Training Rooms", "Computer Lab", "Library"],
-      timings: "Mon-Fri: 9:00 AM - 6:00 PM",
-    },
-    {
-      id: 11,
-      city: "PATNA",
-      trainer: "Birendra Goswami",
-      address: "Training Center, Patna, Bihar",
-      phone: "+91 8802000184",
-      email: "patna@webjyoti.com",
-      facilities: ["Training Rooms", "Computer Lab", "Parking"],
-      timings: "Mon-Fri: 9:00 AM - 6:00 PM",
-    },
-    {
-      id: 12,
-      city: "GHORAKPUR",
-      trainer: "Manish",
-      address: "Training Center, Gorakhpur, Uttar Pradesh",
-      phone: "+91 8802000185",
-      email: "gorakhpur@webjyoti.com",
-      facilities: ["Training Rooms", "Computer Lab"],
-      timings: "Mon-Fri: 9:00 AM - 6:00 PM",
-    },
-    {
-      id: 13,
-      city: "Rohtak",
-      trainer: "Sushil - I-CONS COMPUTERS",
-      address: "I-CONS COMPUTERS, Rohtak, Haryana (Covers Karnal & Hisar)",
-      phone: "+91 8802000186",
-      email: "rohtak@webjyoti.com",
-      facilities: ["Training Rooms", "Computer Lab", "Technical Support"],
-      timings: "Mon-Fri: 9:00 AM - 6:00 PM",
-    },
-    {
-      id: 14,
-      city: "BAREILLY",
-      trainer: "Mayank Goel",
-      address: "Training Center, Bareilly, Uttar Pradesh",
-      phone: "+91 8802000187",
-      email: "bareilly@webjyoti.com",
-      facilities: ["Training Rooms", "Computer Lab"],
-      timings: "Mon-Fri: 9:00 AM - 6:00 PM",
-    },
-    {
-      id: 15,
-      city: "KOTA",
-      trainer: "Hirdesh Bhardwaj",
-      address: "Training Center, Kota, Rajasthan",
-      phone: "+91 8802000188",
-      email: "kota@webjyoti.com",
-      facilities: ["Training Rooms", "Computer Lab", "Study Area"],
-      timings: "Mon-Fri: 9:00 AM - 6:00 PM",
-    },
-    {
-      id: 16,
-      city: "LUDHIANA",
-      trainer: "Varinder - Amiras",
-      address: "Amiras Training Center, Ludhiana, Punjab",
-      phone: "+91 8802000189",
-      email: "ludhiana@webjyoti.com",
-      facilities: ["Training Rooms", "Computer Lab", "Parking"],
-      timings: "Mon-Fri: 9:00 AM - 6:00 PM",
-    },
-    {
-      id: 17,
-      city: "GUWAHATI",
-      trainer: "Manoj",
-      address: "Training Center, Guwahati, Assam",
-      phone: "+91 8802000190",
-      email: "guwahati@webjyoti.com",
-      facilities: ["Training Rooms", "Computer Lab"],
-      timings: "Mon-Fri: 9:00 AM - 6:00 PM",
-    },
-    {
-      id: 18,
-      city: "Gandhinagar",
-      trainer: "Rizwan Shaikh",
-      address: "Training Center, Gandhinagar, Gujarat",
-      phone: "+91 8802000191",
-      email: "gandhinagar@webjyoti.com",
-      facilities: ["Training Rooms", "Computer Lab", "Conference Room"],
-      timings: "Mon-Fri: 9:00 AM - 6:00 PM",
-    },
-    {
-      id: 19,
-      city: "CHITTORGARH",
-      trainer: "Shubham Nathani",
-      address: "Training Center, Chittorgarh, Rajasthan",
-      phone: "+91 8802000192",
-      email: "chittorgarh@webjyoti.com",
-      facilities: ["Training Rooms", "Computer Lab"],
-      timings: "Mon-Fri: 9:00 AM - 6:00 PM",
-    },
-    {
-      id: 20,
-      city: "KOLKATA",
-      trainer: "Parul Singh",
-      address: "Training Center, Kolkata, West Bengal",
-      phone: "+91 8802000193",
-      email: "kolkata@webjyoti.com",
-      facilities: ["Training Rooms", "Computer Lab", "Library", "Cafeteria"],
-      timings: "Mon-Fri: 9:00 AM - 6:00 PM",
-    },
-    {
-      id: 21,
-      city: "Bangalore",
-      trainer: "Chandrababu R",
-      address: "Training Center, Bangalore, Karnataka",
-      phone: "+91 8802000194",
-      email: "bangalore1@webjyoti.com",
-      facilities: ["Training Rooms", "Computer Lab", "Conference Hall"],
-      timings: "Mon-Fri: 9:00 AM - 6:00 PM",
-    },
-    {
-      id: 22,
-      city: "Bangalore",
-      trainer: "Ismail Chalil",
-      address: "Training Center, Bangalore, Karnataka",
-      phone: "+91 8802000195",
-      email: "bangalore2@webjyoti.com",
-      facilities: ["Training Rooms", "Computer Lab", "Study Area"],
-      timings: "Mon-Fri: 9:00 AM - 6:00 PM",
-    },
-  ]
-
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -353,7 +130,7 @@ export default function LocationsPage() {
         </div>
       </section>
 
-      {/* Coverage Map */}
+       {/* Coverage Map */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">Training Centers Across India</h2>
@@ -401,7 +178,8 @@ export default function LocationsPage() {
         </div>
       </section>
 
+
       <Footer />
     </div>
-  )
+  );
 }
