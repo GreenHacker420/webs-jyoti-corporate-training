@@ -13,7 +13,9 @@ import { FloatingCard } from "@/components/animations/floating-card"
 import { StaggerContainer } from "@/components/animations/stagger-container"
 import { SafeSection } from "@/components/error-boundary"
 import { TrustedBrands } from "@/components/trusted-brands"
-import { Play, ArrowRight, CheckCircle, Star, Users, Award, BookOpen } from "lucide-react"
+import { Play, ArrowRight, CheckCircle, Star, Users, Award, Clock, BookOpen } from "lucide-react"
+import { Analytics } from "@vercel/analytics/next"
+
 
 export default function HomePage() {
   return (
@@ -168,7 +170,7 @@ export default function HomePage() {
       </section>
 
       {/* Training Programs */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 pb-0 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <FadeIn className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Our Training Programs</h2>
@@ -225,53 +227,58 @@ export default function HomePage() {
 
             <FadeIn direction="right" delay={300}>
               <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
-                <FloatingCard className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
-                    <span className="text-white font-bold">📊</span>
-                  </div>
-                  <h4 className="font-bold text-gray-900 mb-2">Data Analytics</h4>
-                  <p className="text-gray-600 text-sm">Master statistical analysis and data visualization techniques</p>
-                </FloatingCard>
-
-                <FloatingCard className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100" delay={100}>
-                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4">
-                    <span className="text-white font-bold">📈</span>
-                  </div>
-                  <h4 className="font-bold text-gray-900 mb-2">Advanced Excel</h4>
-                  <p className="text-gray-600 text-sm">Pivot tables, macros, VBA, and automation</p>
-                </FloatingCard>
-
-                <FloatingCard className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100" delay={200}>
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
-                    <span className="text-white font-bold">📋</span>
-                  </div>
-                  <h4 className="font-bold text-gray-900 mb-2">Power BI</h4>
-                  <p className="text-gray-600 text-sm">Interactive dashboards and business intelligence</p>
-                </FloatingCard>
-
-                <FloatingCard className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100" delay={300}>
-                  <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4">
-                    <span className="text-white font-bold">💼</span>
-                  </div>
-                  <h4 className="font-bold text-gray-900 mb-2">Sales Tools</h4>
-                  <p className="text-gray-600 text-sm">CRM systems, sales analytics, and pipeline management</p>
-                </FloatingCard>
-
-                <FloatingCard className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100" delay={400}>
-                  <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mb-4">
-                    <span className="text-white font-bold">🤝</span>
-                  </div>
-                  <h4 className="font-bold text-gray-900 mb-2">Soft Skills</h4>
-                  <p className="text-gray-600 text-sm">Leadership, communication, and team collaboration</p>
-                </FloatingCard>
-
-                <FloatingCard className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100" delay={500}>
-                  <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4">
-                    <span className="text-white font-bold">📱</span>
-                  </div>
-                  <h4 className="font-bold text-gray-900 mb-2">Digital Marketing</h4>
-                  <p className="text-gray-600 text-sm">SEO, social media, and digital campaign management</p>
-                </FloatingCard>
+                {[
+                  {
+                    icon: "📊",
+                    title: "Data Analytics",
+                    desc: "Master statistical analysis and data visualization techniques",
+                    gradient: "from-blue-500 to-blue-600",
+                  },
+                  {
+                    icon: "📈",
+                    title: "Advanced Excel",
+                    desc: "Pivot tables, macros, VBA, and automation",
+                    gradient: "from-green-500 to-green-600",
+                  },
+                  {
+                    icon: "📋",
+                    title: "Power BI",
+                    desc: "Interactive dashboards and business intelligence",
+                    gradient: "from-purple-500 to-purple-600",
+                  },
+                  {
+                    icon: "💼",
+                    title: "Sales Tools",
+                    desc: "CRM systems, sales analytics, and pipeline management",
+                    gradient: "from-orange-500 to-orange-600",
+                  },
+                  {
+                    icon: "🤝",
+                    title: "Soft Skills",
+                    desc: "Leadership, communication, and team collaboration",
+                    gradient: "from-pink-500 to-pink-600",
+                  },
+                  {
+                    icon: "📱",
+                    title: "Digital Marketing",
+                    desc: "SEO, social media, and digital campaign management",
+                    gradient: "from-indigo-500 to-indigo-600",
+                  },
+                ].map((card, index) => (
+                  <FloatingCard
+                    key={index}
+                    className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100"
+                    delay={index * 100}
+                  >
+                    <div
+                      className={`w-12 h-12 bg-gradient-to-r ${card.gradient} rounded-xl flex items-center justify-center mb-4`}
+                    >
+                      <span className="text-white font-bold">{card.icon}</span>
+                    </div>
+                    <h4 className="font-bold text-gray-900 mb-2">{card.title}</h4>
+                    <p className="text-gray-600 text-sm">{card.desc}</p>
+                  </FloatingCard>
+                ))}
               </div>
             </FadeIn>
           </div>
@@ -280,9 +287,9 @@ export default function HomePage() {
 
 
       {/* Testimonials Section */}
-      <SafeSection sectionName="Testimonials Section">
+      {/* <SafeSection sectionName="Testimonials Section">
         <TestimonialsSection />
-      </SafeSection>
+      </SafeSection> */}
 
       {/* Trusted Brands Section */}
       <SafeSection sectionName="Trusted Brands Section">
