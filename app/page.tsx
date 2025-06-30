@@ -58,7 +58,7 @@ export default function HomePage() {
                 <Link href="https://www.youtube.com/watch?v=2Nr6jK77B6g" target="_blank" rel="noopener noreferrer">
                   <Button
                     variant="outline"
-                    className="border-2 border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:bg-blue-50"
+                    className="bg-blue-600 text-white hover:bg-white hover:text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300"
                   >
                     <Play className="w-5 h-5 mr-2" />
                     Watch Demo
@@ -312,17 +312,31 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:scale-105">
-                  Get Started
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                <Button className="group bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:scale-105 flex items-center overflow-hidden">
+                  <span
+                    className="relative z-10 flex items-center transition-all duration-300 group-hover:translate-x-1"
+                  >
+                    Get Started
+
+                    {/* Arrow: Larger, slide-in with fade */}
+                    <ArrowRight
+                      className="w-6 h-6 ml-2 transform -translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
+                    />
+                  </span>
                 </Button>
               </Link>
               <Link href="https://www.websjyoti.com/web-designing.pdf" target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="outline"
-                  className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300"
+                  className="relative overflow-hidden group px-8 py-4 border-2 border-blue-600 text-white bg-blue-600 rounded-full text-lg font-semibold transition-all duration-300"
                 >
-                  Download Brochure
+                  {/* Text Layer */}
+                  <span className="relative z-10 transition-colors duration-300 group-hover:text-blue-600">
+                    Download Brochure
+                  </span>
+
+                  {/* Vertical Wipe Background */}
+                  <span className="absolute inset-0 bg-white transition-transform duration-300 transform scale-y-0 origin-top group-hover:scale-y-100 z-0"></span>
                 </Button>
               </Link>
             </div>
