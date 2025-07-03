@@ -21,7 +21,7 @@ export function Header() {
       {/* Top Header */}
       <div className="bg-gradient-to-r from-slate-800 to-slate-900 text-white py-3 px-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
-          <div className="flex items-center space-x-8 overflow-hidden">
+          <div className="flex items-center space-x-8 overflow-hidden cursor-pointer">
             <div className="flex items-center space-x-2 hover:text-blue-300 transition-colors duration-300">
               <Phone className="w-4 h-4 flex-shrink-0" />
               <span className="hidden sm:inline">+91 8802000175</span>

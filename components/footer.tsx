@@ -92,7 +92,7 @@ export function Footer() {
             {/* Contact Info */}
             <div>
               <h4 className="text-lg font-semibold mb-6 text-white">Get In Touch</h4>
-              <div className="space-y-4">
+              <div className="space-y-4 cursor-pointer">
                 <div className="flex items-start space-x-3 group">
                   <div className="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center group-hover:bg-blue-600 transition-colors duration-300">
                     <Phone className="w-5 h-5 text-blue-400 group-hover:text-white" />
