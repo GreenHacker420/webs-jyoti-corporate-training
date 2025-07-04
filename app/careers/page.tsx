@@ -161,7 +161,7 @@ export default function CareersPage() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white hover:text-blue-900 font-semibold px-8 py-3"
+                className="border-white text-blue-900 hover:bg-white hover:text-blue-900 font-semibold px-8 py-3"
                 onClick={() => document.getElementById('positions')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 View Positions
@@ -322,7 +322,7 @@ export default function CareersPage() {
               asChild
               variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-blue-900 font-semibold px-8 py-3"
+              className="border-white text-blue-900 hover:bg-white hover:text-blue-900 font-semibold px-8 py-3"
             >
               <Link href="/contact">
                 Contact HR Team
