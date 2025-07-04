@@ -229,7 +229,7 @@ Webs Jyoti has been a leading provider of corporate training services for over 1
 - **MIS Reporting Systems**
 - **Corporate Skill Development**
 
-With 9,375+ professionals trained across 22+ cities in India, Webs Jyoti continues to be the trusted partner for organizations seeking to enhance their team's analytical and technical capabilities.
+With 17000+ professionals trained across 22+ cities in India, Webs Jyoti continues to be the trusted partner for organizations seeking to enhance their team's analytical and technical capabilities.
 
 ---
 
