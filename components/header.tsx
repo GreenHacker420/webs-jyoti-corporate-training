@@ -176,7 +176,7 @@ export function Header() {
                 onClick={closeMobileMenu}
                 className="flex items-center space-x-3 px-6 py-4 text-gray-700 hover:text-blue-600 hover:bg-white transition-all duration-300 rounded-xl mx-2 font-medium"
               >
-                <span className="text-xl">🏠</span>
+                <span className="text-xl"></span>
                 <span>Home</span>
               </Link>
               <Link
@@ -184,7 +184,7 @@ export function Header() {
                 onClick={closeMobileMenu}
                 className="flex items-center space-x-3 px-6 py-4 text-gray-700 hover:text-blue-600 hover:bg-white transition-all duration-300 rounded-xl mx-2 font-medium"
               >
-                <span className="text-xl">👥</span>
+                <span className="text-xl"></span>
                 <span>About</span>
               </Link>
               <Link
@@ -192,7 +192,7 @@ export function Header() {
                 onClick={closeMobileMenu}
                 className="flex items-center space-x-3 px-6 py-4 text-gray-700 hover:text-blue-600 hover:bg-white transition-all duration-300 rounded-xl mx-2 font-medium"
               >
-                <span className="text-xl">📚</span>
+                <span className="text-xl"></span>
                 <span>Training Modules</span>
               </Link>
               <Link
@@ -200,7 +200,7 @@ export function Header() {
                 onClick={closeMobileMenu}
                 className="flex items-center space-x-3 px-6 py-4 text-gray-700 hover:text-blue-600 hover:bg-white transition-all duration-300 rounded-xl mx-2 font-medium"
               >
-                <span className="text-xl">👨‍🏫</span>
+                <span className="text-xl"></span>
                 <span>Expert Trainers</span>
               </Link>
               <Link
@@ -208,7 +208,7 @@ export function Header() {
                 onClick={closeMobileMenu}
                 className="flex items-center space-x-3 px-6 py-4 text-gray-700 hover:text-blue-600 hover:bg-white transition-all duration-300 rounded-xl mx-2 font-medium"
               >
-                <span className="text-xl">📍</span>
+                <span className="text-xl"></span>
                 <span>Locations</span>
               </Link>
               <a
@@ -218,7 +218,7 @@ export function Header() {
                 onClick={closeMobileMenu}
                 className="flex items-center space-x-3 px-6 py-4 text-gray-700 hover:text-blue-600 hover:bg-white transition-all duration-300 rounded-xl mx-2 font-medium"
               >
-                <span className="text-xl">💻</span>
+                <span className="text-xl"></span>
                 <span>LMS Platform</span>
               </a>
               <Link
@@ -226,7 +226,7 @@ export function Header() {
                 onClick={closeMobileMenu}
                 className="flex items-center space-x-3 px-6 py-4 text-gray-700 hover:text-blue-600 hover:bg-white transition-all duration-300 rounded-xl mx-2 font-medium"
               >
-                <span className="text-xl">🖼️</span>
+                <span className="text-xl"></span>
                 <span>Gallery</span>
               </Link>
               <Link
@@ -234,7 +234,7 @@ export function Header() {
                 onClick={closeMobileMenu}
                 className="flex items-center space-x-3 px-6 py-4 text-gray-700 hover:text-blue-600 hover:bg-white transition-all duration-300 rounded-xl mx-2 font-medium"
               >
-                <span className="text-xl">💬</span>
+                <span className="text-xl"></span>
                 <span>Testimonials</span>
               </Link>
               <Link
@@ -242,7 +242,7 @@ export function Header() {
                 onClick={closeMobileMenu}
                 className="flex items-center space-x-3 px-6 py-4 text-gray-700 hover:text-blue-600 hover:bg-white transition-all duration-300 rounded-xl mx-2 font-medium"
               >
-                <span className="text-xl">📧</span>
+                <span className="text-xl"></span>
                 <span>Contact</span>
               </Link>
               <Link
@@ -250,7 +250,7 @@ export function Header() {
                 onClick={closeMobileMenu}
                 className="flex items-center space-x-3 px-6 py-4 text-gray-700 hover:text-blue-600 hover:bg-white transition-all duration-300 rounded-xl mx-2 font-medium"
               >
-                <span className="text-xl">💼</span>
+                <span className="text-xl"></span>
                 <span>Careers</span>
               </Link>
               <Link
@@ -258,7 +258,7 @@ export function Header() {
                 onClick={closeMobileMenu}
                 className="flex items-center justify-center space-x-3 px-6 py-4 bg-gradient-to-r from-blue-600 to-indigo-700 text-white hover:from-blue-700 hover:to-indigo-800 transition-all duration-300 rounded-xl mx-2 font-semibold shadow-lg"
               >
-                <span className="text-xl">❓</span>
+                <span className="text-xl"></span>
                 <span>Enquire Now</span>
               </Link>
             </div>
