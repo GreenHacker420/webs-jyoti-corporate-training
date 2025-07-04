@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link"
-
 import Image from "next/image"
 import { Quote } from "lucide-react"
 
@@ -12,6 +11,7 @@ interface Testimonial {
   designation: string
   company: string
   logo: string
+  trainingImage: string
 }
 
 const testimonials: Testimonial[] = [
@@ -23,6 +23,7 @@ const testimonials: Testimonial[] = [
     designation: "Co-Founder & CEO",
     company: "FIA Global",
     logo: "/logos/fia-global-logo.png",
+    trainingImage: "/images/gallery/azamgarh-excel.webp",
   },
   {
     id: 2,
@@ -32,6 +33,7 @@ const testimonials: Testimonial[] = [
     designation: "Corporate Trainer",
     company: "Del Monte Foods Pvt. Ltd.",
     logo: "/logos/del-monte-logo.png",
+    trainingImage: "/images/gallery/pune-excel.webp",
   },
   {
     id: 3,
@@ -41,6 +43,7 @@ const testimonials: Testimonial[] = [
     designation: "HR",
     company: "MakeMyTrip",
     logo: "/logos/makemytrip-logo.png",
+    trainingImage: "/images/gallery/raipur-excel.webp",
   },
   {
     id: 4,
@@ -50,6 +53,7 @@ const testimonials: Testimonial[] = [
     designation: "HR Manager",
     company: "DCM Shriram Ltd.",
     logo: "/logos/dcm-shriram-logo.png",
+    trainingImage: "/images/gallery/img-4351.webp",
   },
   {
     id: 5,
@@ -59,6 +63,7 @@ const testimonials: Testimonial[] = [
     designation: "Training Department",
     company: "Del Monte India",
     logo: "/logos/del-monte-logo.png",
+    trainingImage: "/images/gallery/azamgarh-excel.webp",
   },
 ]
 
@@ -82,32 +87,84 @@ export function TestimonialTicker() {
           {duplicatedTestimonials.map((testimonial, index) => (
             <div
               key={`${testimonial.id}-${index}`}
-              className="flex-shrink-0 w-96 mx-4 transition-transform duration-300 transform hover:scale-105 hover:z-10"
+              className="flex-shrink-0 mx-4"
             >
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 h-full relative hover:shadow-2xl">
-                <div className="absolute inset-0 bg-white opacity-80 blur-lg transition-opacity duration-300 hover:opacity-100"></div>
-                <div className="relative z-10">
-                  <div className="flex items-start mb-4">
-                    <Quote className="w-8 h-8 text-blue-600 mr-3 flex-shrink-0 mt-1" />
-                    <p className="text-gray-700 text-sm leading-relaxed italic">"{testimonial.quote}"</p>
+              {/* Futuristic 3D Flip Card Container */}
+              <div className="futuristic-flip-card">
+                <div className="futuristic-flip-card-inner">
+                  {/* Front Face - Training Session Image */}
+                  <div className="futuristic-flip-card-front relative">
+                    <Image
+                      src={testimonial.trainingImage}
+                      alt={`Training session at ${testimonial.company}`}
+                      fill
+                      className="object-cover"
+                    />
+                    {/* Gradient overlay for better text visibility */}
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-10 h-10 bg-white/90 rounded-lg flex items-center justify-center p-1 border border-gold/30">
+                          <Image
+                            src={testimonial.logo}
+                            alt={`${testimonial.company} logo`}
+                            width={32}
+                            height={32}
+                            className="object-contain"
+                          />
+                        </div>
+                        <div className="text-white">
+                          <p className="font-semibold text-sm font-poppins">{testimonial.company}</p>
+                          <p className="text-xs opacity-90 text-blue-200">Training Session</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
-                  <div className="flex items-center justify-between mt-6 pt-4 border-t border-gray-100">
-                    <div className="flex-1">
-                      <h4 className="font-semibold text-gray-900 text-sm">{testimonial.name}</h4>
-                      <p className="text-gray-600 text-xs">{testimonial.designation}</p>
-                      <p className="text-blue-600 text-xs font-medium">{testimonial.company}</p>
-                    </div>
+                  {/* Back Face - Brand-Themed Testimonial */}
+                  <div className="futuristic-flip-card-back brand-themed-card">
+                    {/* Animated Noise Texture Overlay */}
+                    <div className="brand-noise-overlay"></div>
 
-                    <div className="flex-shrink-0 ml-4">
-                      <div className="w-12 h-12 bg-gray-50 rounded-lg flex items-center justify-center overflow-hidden">
-                        <Image
-                          src={testimonial.logo || "/placeholder.svg"}
-                          alt={`${testimonial.company} logo`}
-                          width={40}
-                          height={40}
-                          className="object-contain"
-                        />
+                    {/* Content Layer - Above all overlays */}
+                    <div className="brand-content-layer flex flex-col justify-between">
+                      {/* Quote Section */}
+                      <div className="flex items-start mb-4">
+                        <Quote className="w-6 h-6 brand-accent mr-3 flex-shrink-0 mt-1" />
+                        <p className="text-white text-sm leading-relaxed italic font-poppins font-light">
+                          "{testimonial.quote}"
+                        </p>
+                      </div>
+
+                      {/* Client Information Section */}
+                      <div className="mt-auto pt-6">
+                        <div className="border-t border-blue-400/30 pt-4">
+                          <div className="flex items-center justify-between">
+                            <div className="flex-1">
+                              <h4 className="font-semibold text-white text-sm font-poppins mb-1">
+                                {testimonial.name}
+                              </h4>
+                              <p className="brand-accent text-xs font-medium mb-1">
+                                {testimonial.designation}
+                              </p>
+                              <p className="brand-secondary-accent text-xs font-poppins font-medium">
+                                {testimonial.company}
+                              </p>
+                            </div>
+
+                            {/* Company Logo Container with Brand Border */}
+                            <div className="flex-shrink-0 ml-4">
+                              <div className="w-12 h-12 bg-blue-400/10 rounded-lg flex items-center justify-center overflow-hidden border brand-border backdrop-blur-sm">
+                                <Image
+                                  src={testimonial.logo || "/placeholder.svg"}
+                                  alt={`${testimonial.company} logo`}
+                                  width={32}
+                                  height={32}
+                                  className="object-contain filter brightness-110"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>

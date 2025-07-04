@@ -292,5 +292,124 @@ body {
   .animate-full-slide-bounce {
     animation: full-slide-bounce 1.2s ease-in-out forwards;
   }
+
+  /* Futuristic 3D Flip Card - Matrix/Cyberpunk Theme */
+  .futuristic-flip-card {
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+    font-family: var(--font-poppins), "Poppins", sans-serif;
+  }
+
+  .futuristic-flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
+  }
+
+  .futuristic-flip-card:hover .futuristic-flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .futuristic-flip-card-front,
+  .futuristic-flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: 1px dashed rgba(59, 130, 246, 0.6); /* Brand blue dashed border */
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .futuristic-flip-card-back {
+    transform: rotateY(180deg);
+  }
+
+  /* Brand-Themed Back Face Styling */
+  .brand-themed-card {
+    background: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%); /* Blue to indigo gradient */
+    color: #FFF; /* White text */
+    position: relative;
+    transition: box-shadow 0.3s ease;
+  }
+
+  /* Hover Glow Effect - Brand Colors */
+  .brand-themed-card:hover {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5), 0 0 40px rgba(99, 102, 241, 0.3);
+  }
+
+  /* Animated Noise Texture Overlay */
+  .brand-noise-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: url("https://i.imgur.com/8Bq8C3P.gif");
+    background-size: cover;
+    mix-blend-mode: overlay;
+    opacity: 0.1;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* Pixel Grid Pattern - Brand Colors */
+  .brand-themed-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(147, 197, 253, 0.05) 2px),
+      repeating-linear-gradient(90deg, transparent, transparent 1px, rgba(147, 197, 253, 0.05) 2px);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* Content Layer - Above all overlays */
+  .brand-content-layer {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    padding: 1rem;
+  }
+
+  /* Brand accent colors */
+  .brand-accent {
+    color: #60a5fa; /* Light blue accent */
+  }
+
+  .brand-border {
+    border-color: rgba(59, 130, 246, 0.6); /* Blue border with transparency */
+  }
+
+  .brand-secondary-accent {
+    color: #a5b4fc; /* Light indigo accent */
+  }
+
+
+
+  /* Parallax Background Effect */
+  .parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  .parallax-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(249, 250, 251, 0.5); /* bg-gray-50 with 50% opacity */
+    z-index: 1;
+  }
+
+  .parallax-content {
+    position: relative;
+    z-index: 2;
+  }
 }
 

@@ -170,8 +170,13 @@ export default function HomePage() {
       </section>
 
       {/* Training Programs */}
-      <section className="py-24 pb-0 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="py-24 pb-0 parallax-bg relative" style={{
+        backgroundImage: 'url("https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80")'
+      }}>
+        {/* Parallax Overlay */}
+        <div className="parallax-overlay"></div>
+
+        <div className="max-w-7xl mx-auto px-4 parallax-content">
           <FadeIn className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Our Training Programs</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">

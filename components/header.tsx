@@ -64,7 +64,7 @@ export function Header() {
                 </div>
                 <div>
                   <div className="text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
-                    Webs Jyoti Corporate Training
+                    Corporate Training
                   </div>
                 </div>
               </Link>
@@ -137,6 +137,12 @@ export function Header() {
                 className="px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-300 font-medium"
               >
                 Contact
+              </Link>
+              <Link
+                href="/careers"
+                className="px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-300 font-medium"
+              >
+                Careers
               </Link>
               <Link
                 href="/enquire"
@@ -238,6 +244,14 @@ export function Header() {
               >
                 <span className="text-xl">📧</span>
                 <span>Contact</span>
+              </Link>
+              <Link
+                href="/careers"
+                onClick={closeMobileMenu}
+                className="flex items-center space-x-3 px-6 py-4 text-gray-700 hover:text-blue-600 hover:bg-white transition-all duration-300 rounded-xl mx-2 font-medium"
+              >
+                <span className="text-xl">💼</span>
+                <span>Careers</span>
               </Link>
               <Link
                 href="/enquire"

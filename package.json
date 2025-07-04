@@ -1,6 +1,6 @@
 {
   "name": "webs-jyoti-corporate-training",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "author": "The GreenHacker",
   "description": "Professional corporate training platform for data analytics, Excel, Power BI, and business intelligence training",
@@ -64,6 +64,7 @@
     "react": "^19",
     "react-day-picker": "latest",
     "react-dom": "^19",
+    "react-dropzone": "^14.3.8",
     "react-hook-form": "latest",
     "react-icons": "^5.5.0",
     "react-resizable-panels": "latest",

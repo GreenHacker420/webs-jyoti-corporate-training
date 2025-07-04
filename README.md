@@ -16,6 +16,9 @@ Webs Jyoti Corporate Training is a comprehensive web platform designed to showca
 - **Corporate Training Focus**: Specialized content for data analytics, Excel, Power BI, and MIS reporting
 - **Multi-delivery Support**: Online, on-site, and hybrid training options
 - **Performance Analytics**: Built-in tracking for training effectiveness and ROI measurement
+- **Career Portal**: Comprehensive job application and recruitment management system
+- **Image Protection**: Advanced watermarking and content protection system
+- **Admin Dashboard**: Powerful tools for managing applications and candidates
 
 ## 🛠️ Technology Stack
 
@@ -76,6 +79,10 @@ npm run start
 webs-jyoti-corporate-training-lj/
 ├── app/                    # Next.js app directory
 │   ├── about/             # About page
+│   ├── careers/           # Career portal pages
+│   │   ├── page.tsx       # Main careers page
+│   │   ├── apply/         # Application form
+│   │   └── admin/         # Admin dashboard
 │   ├── contact/           # Contact page
 │   ├── enquire/           # Enquiry page
 │   ├── gallery/           # Gallery page
@@ -83,17 +90,32 @@ webs-jyoti-corporate-training-lj/
 │   ├── locations/         # Locations page
 │   ├── trainer-team/      # Trainer team page
 │   ├── training-modules/  # Training modules page
+│   ├── api/               # API routes
+│   │   ├── careers/       # Career-related APIs
+│   │   └── upload/        # File upload APIs
 │   ├── globals.css        # Global styles
 │   ├── layout.tsx         # Root layout component
 │   └── page.tsx           # Homepage component
 ├── components/            # Reusable React components
 │   ├── animations/        # Animation components
+│   ├── careers/           # Career portal components
 │   ├── ui/               # UI component library
 │   ├── footer.tsx        # Footer component
 │   ├── header.tsx        # Header component
 │   └── ...               # Other components
+├── data/                 # Data files and schemas
+│   ├── career-positions.tsx # Job positions data
+│   ├── skills.tsx        # Skills database
+│   └── ...               # Other data files
+├── docs/                 # Documentation
+│   ├── career-portal/    # Career portal docs
+│   ├── features/         # Feature documentation
+│   └── ...               # Other documentation
 ├── hooks/                # Custom React hooks
 ├── lib/                  # Utility functions
+│   ├── career-utils.ts   # Career-specific utilities
+│   ├── watermark.ts      # Image protection
+│   └── ...               # Other utilities
 ├── public/               # Static assets
 │   ├── images/           # Image assets
 │   └── logos/            # Logo assets
@@ -178,6 +200,16 @@ We welcome contributions to improve the Webs Jyoti Corporate Training platform!
 
 This project is proprietary software developed for Webs Jyoti Corporate Training. All rights reserved.
 
+## 📚 Documentation
+
+Comprehensive documentation is available in the `docs/` directory:
+
+- **[Main Documentation](./docs/README.md)** - Complete platform overview
+- **[Career Portal Guide](./docs/career-portal/README.md)** - Career portal features and usage
+- **[User Guide](./docs/career-portal/user-guide.md)** - For job seekers and applicants
+- **[Admin Guide](./docs/career-portal/admin-guide.md)** - For HR teams and administrators
+- **[Developer Guide](./docs/career-portal/developer-guide.md)** - Technical implementation details
+
 ## 📞 Support
 
 For technical support or questions about the platform:
@@ -185,6 +217,7 @@ For technical support or questions about the platform:
 - **Website**: [https://websjyoti.com](https://websjyoti.com)
 - **Email**: Contact through the website contact form
 - **Training Portal**: [https://corporate.websjyoti.com](https://corporate.websjyoti.com)
+- **Career Portal**: [/careers](./app/careers) - Job opportunities and applications
 
 ## 🏆 About Webs Jyoti
 
