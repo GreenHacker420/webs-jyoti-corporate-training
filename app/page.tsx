@@ -1,21 +1,16 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { EnhancedButton } from "@/components/ui/enhanced-button"
-import { EnhancedCard, GlowCard } from "@/components/ui/enhanced-card"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { TestimonialTicker } from "@/components/testimonial-ticker"
-import { TestimonialsSection } from "@/components/testimonials-section"
 import { FadeIn } from "@/components/animations/fade-in"
 import { Counter } from "@/components/animations/counter"
 import { FloatingCard } from "@/components/animations/floating-card"
 import { StaggerContainer } from "@/components/animations/stagger-container"
 import { SafeSection } from "@/components/error-boundary"
 import { TrustedBrands } from "@/components/trusted-brands"
-import { Play, ArrowRight, CheckCircle, Star, Users, Award, Clock, BookOpen } from "lucide-react"
-import { Analytics } from "@vercel/analytics/next"
-
+import { ArrowRight, CheckCircle, Star, Users, Award, BookOpen } from "lucide-react"
 
 export default function HomePage() {
   return (
@@ -55,13 +50,13 @@ export default function HomePage() {
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                 </Link>
-                <Link href="https://www.youtube.com/watch?v=2Nr6jK77B6g" target="_blank" rel="noopener noreferrer">
+                <Link href="/gallery">
                   <Button
                     variant="outline"
                     className="bg-blue-600 text-white hover:bg-white hover:text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300"
                   >
-                    <Play className="w-5 h-5 mr-2" />
-                    Watch Demo
+                    <BookOpen className="w-5 h-5 mr-2" />
+                    View Gallery
                   </Button>
                 </Link>
               </div>
@@ -104,8 +99,9 @@ export default function HomePage() {
                       objectPosition: "30% center",
                     }}
                   />
-                  <div className="absolute -top-6 -right-6 bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-2xl font-bold shadow-lg animate-bounce z-20">
-                    🔥 Live Sessions!
+                  <div className="absolute -top-6 -right-6 bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-2 rounded-2xl font-bold shadow-lg animate-pulse z-20 flex items-center space-x-2">
+                    <div className="w-3 h-3 bg-white rounded-full animate-ping"></div>
+                    <span className="text-sm">Call Now +91-8802000175</span>
                   </div>
                   <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 z-20">
                     <div className="flex items-center space-x-3">
@@ -170,9 +166,13 @@ export default function HomePage() {
       </section>
 
       {/* Training Programs */}
-      <section className="py-24 pb-0 parallax-bg relative" style={{
-        backgroundImage: 'url("https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80")'
-      }}>
+      <section
+        className="py-24 pb-0 parallax-bg relative"
+        style={{
+          backgroundImage:
+            'url("https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80")',
+        }}
+      >
         {/* Parallax Overlay */}
         <div className="parallax-overlay"></div>
 
@@ -290,7 +290,6 @@ export default function HomePage() {
         </div>
       </section>
 
-
       {/* Testimonials Section */}
       {/* <SafeSection sectionName="Testimonials Section">
         <TestimonialsSection />
@@ -318,15 +317,10 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
                 <Button className="group bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:scale-105 flex items-center overflow-hidden">
-                  <span
-                    className="relative z-10 flex items-center transition-all duration-300 group-hover:translate-x-1"
-                  >
+                  <span className="relative z-10 flex items-center transition-all duration-300 group-hover:translate-x-1">
                     Get Started
-
                     {/* Arrow: Larger, slide-in with fade */}
-                    <ArrowRight
-                      className="w-6 h-6 ml-2 transform -translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
-                    />
+                    <ArrowRight className="w-6 h-6 ml-2 transform -translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
                   </span>
                 </Button>
               </Link>
