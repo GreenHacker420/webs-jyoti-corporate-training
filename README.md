@@ -42,8 +42,23 @@ Webs Jyoti Corporate Training is a comprehensive web platform designed to showca
 ## 📦 Installation and Setup
 
 ### Prerequisites
-- Node.js 18.0 or higher
-- npm package manager
+
+#### Development Environment
+- **Node.js**: v18.0.0 or higher (v24.3.0 recommended)
+- **npm**: v8.0.0 or higher (v11.4.2 recommended)
+- **Git**: For version control
+
+#### cPanel Hosting Requirements
+- **Node.js Support**: cPanel with "Setup Node.js App" feature
+- **Node.js Version**: v18+ supported by hosting provider
+- **File Manager Access**: For file uploads and management
+- **SSH Access**: Recommended but not required
+- **Domain/Subdomain**: Configured for the application
+
+#### Recommended Tools
+- **VS Code**: With Next.js and TypeScript extensions
+- **cURL**: For API testing
+- **ZIP Utility**: For deployment package creation
 
 ### Quick Start
 
@@ -69,11 +84,214 @@ Webs Jyoti Corporate Training is a comprehensive web platform designed to showca
 ### Build for Production
 
 ```bash
-npm run build
-npm run start
+# Build and test locally
+npm run deploy:test
+
+# Complete deployment process
+npm run deploy:full
 ```
 
-## 📁 Project Structure
+## 🚀 Deployment Process
+
+### Automated Deployment (Recommended)
+
+The application includes automated deployment scripts for easy cPanel deployment:
+
+```bash
+# Complete deployment process
+npm run deploy:full
+
+# This will:
+# 1. Build the production application
+# 2. Validate the build
+# 3. Create deployment package
+# 4. Generate deployment ZIP file
+```
+
+### Manual Deployment Steps
+
+1. **Prepare deployment package**
+   ```bash
+   npm run deploy:package
+   ```
+
+2. **Upload to cPanel**
+   - Upload the generated `deployment-package.zip` to your cPanel File Manager
+   - Extract in your domain's root directory (usually `public_html`)
+
+3. **Configure Node.js App in cPanel**
+   - Go to "Setup Node.js App" in cPanel
+   - Create new application:
+     - **Node.js version**: 18+ (latest available)
+     - **Application mode**: Production
+     - **Application root**: `/public_html` (or your domain folder)
+     - **Application URL**: Your domain name
+     - **Application startup file**: `server.js`
+
+4. **Install dependencies**
+   - In the Node.js app settings, click "Run NPM Install"
+   - Wait for installation to complete
+
+5. **Set environment variables**
+   ```bash
+   NODE_ENV=production
+   NEXT_PUBLIC_BASE_URL=https://yourdomain.com
+   ALLOWED_ORIGINS=https://yourdomain.com,https://www.yourdomain.com
+   ```
+
+6. **Start the application**
+   - Click "START APP" in cPanel
+   - Verify status shows "Running"
+
+### Environment Configuration
+
+#### Required Variables
+```bash
+NODE_ENV=production
+PORT=3000                    # Set automatically by cPanel
+HOST=0.0.0.0                # Bind to all interfaces
+NEXT_PUBLIC_BASE_URL=https://yourdomain.com
+ALLOWED_ORIGINS=https://yourdomain.com,https://www.yourdomain.com
+```
+
+#### Optional Variables
+```bash
+# File Upload
+MAX_FILE_SIZE=5242880       # 5MB default
+UPLOAD_DIR=./uploads
+
+# Email Service (if using)
+SMTP_HOST=your_smtp_host
+SMTP_PORT=587
+SMTP_USER=your_email@yourdomain.com
+SMTP_PASS=your_email_password
+
+# Third-party Services
+FORMSPREE_ENDPOINT=https://formspree.io/f/your_endpoint
+GOOGLE_ANALYTICS_ID=GA_MEASUREMENT_ID
+```
+
+## � API Endpoints
+
+### Health & Status Endpoints
+
+#### GET /health
+Returns server health status and system information.
+
+```bash
+curl http://localhost:3000/health
+```
+
+**Response:**
+```json
+{
+  "status": "healthy",
+  "timestamp": "2025-07-08T15:24:57.155Z",
+  "environment": "production",
+  "uptime": 35.0119638,
+  "memory": {
+    "rss": 94179328,
+    "heapTotal": 46448640,
+    "heapUsed": 43643776,
+    "external": 3926416,
+    "arrayBuffers": 81256
+  },
+  "version": "v24.3.0"
+}
+```
+
+#### GET /api/status
+Returns API status and application version.
+
+```bash
+curl http://localhost:3000/api/status
+```
+
+**Response:**
+```json
+{
+  "api": "online",
+  "timestamp": "2025-07-08T15:25:13.442Z",
+  "version": "0.1.1"
+}
+```
+
+### Career Application Endpoints
+
+#### POST /api/careers/apply
+Submit a new career application.
+
+**Request Body:**
+```json
+{
+  "fullName": "John Doe",
+  "email": "john@example.com",
+  "phone": "1234567890",
+  "linkedinProfile": "https://linkedin.com/in/johndoe",
+  "currentLocation": "Mumbai",
+  "yearsOfExperience": 5,
+  "skills": ["Excel", "Power BI", "Data Analysis"],
+  "positionsAppliedFor": ["Data Analyst", "Business Analyst"],
+  "cvFileName": "john_doe_cv.pdf",
+  "additionalNotes": "Interested in remote opportunities"
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "message": "Application submitted successfully",
+  "applicationId": "APP_20250708_001",
+  "data": {
+    "id": "APP_20250708_001",
+    "status": "pending",
+    "appliedDate": "2025-07-08T15:30:00.000Z"
+  }
+}
+```
+
+#### GET /api/careers/apply
+Retrieve career applications (admin only).
+
+**Query Parameters:**
+- `status`: Filter by status (pending, reviewed, accepted, rejected)
+- `limit`: Number of results (default: 50)
+- `offset`: Pagination offset (default: 0)
+
+### File Upload Endpoints
+
+#### POST /api/upload/cv
+Upload CV file for career applications.
+
+**Request:** Multipart form data
+- `file`: CV file (PDF, DOC, DOCX, max 5MB)
+- `applicantName`: Applicant's name
+- `applicationId`: Associated application ID
+
+**Response:**
+```json
+{
+  "success": true,
+  "message": "CV uploaded successfully",
+  "data": {
+    "fileName": "1720447800000_john_doe_cv.pdf",
+    "originalName": "john_doe_cv.pdf",
+    "fileSize": 1024000,
+    "fileType": "application/pdf",
+    "uploadPath": "/uploads/cvs/1720447800000_john_doe_cv.pdf",
+    "uploadedAt": "2025-07-08T15:30:00.000Z"
+  }
+}
+```
+
+#### GET /api/upload/cv?file=filename
+Download uploaded CV file (admin only).
+
+#### DELETE /api/upload/cv?file=filename
+Delete uploaded CV file (admin only).
+
+## �📁 Project Structure
 
 ```
 webs-jyoti-corporate-training-lj/
@@ -200,7 +418,100 @@ We welcome contributions to improve the Webs Jyoti Corporate Training platform!
 
 This project is proprietary software developed for Webs Jyoti Corporate Training. All rights reserved.
 
-## 📚 Documentation
+## � Troubleshooting
+
+### Common Issues and Solutions
+
+#### Build Issues
+
+**Issue**: `npm run build` fails with TypeScript errors
+```bash
+# Solution: Run type checking first
+npm run type-check
+npm run lint:fix
+npm run build
+```
+
+**Issue**: Module not found errors during build
+```bash
+# Solution: Clean and reinstall dependencies
+npm run clean:all
+npm install
+npm run build
+```
+
+#### Server Issues
+
+**Issue**: Server fails to start with "path-to-regexp" error
+```bash
+# Solution: This was fixed in the latest version
+# Ensure you're using the updated server.js
+npm start
+```
+
+**Issue**: Port already in use
+```bash
+# Solution: Use different port or kill existing process
+PORT=3001 npm start
+# or
+lsof -ti:3000 | xargs kill -9  # Kill process on port 3000
+```
+
+#### Deployment Issues
+
+**Issue**: Application won't start in cPanel
+- Check Node.js version compatibility (18+ required)
+- Verify `server.js` is set as startup file
+- Check environment variables are set correctly
+- Review application logs in cPanel
+
+**Issue**: 404 errors on deployed site
+- Ensure `.next` folder was uploaded
+- Check file permissions (755 for folders, 644 for files)
+- Verify all route files are present
+
+**Issue**: API routes not working
+- Confirm `app/api` folder structure is intact
+- Check server logs for errors
+- Verify custom server is handling requests properly
+
+#### File Upload Issues
+
+**Issue**: CV upload fails
+- Check `uploads/cvs` directory exists and has write permissions
+- Verify file size is under 5MB limit
+- Ensure file type is PDF, DOC, or DOCX
+
+#### Performance Issues
+
+**Issue**: Slow page loading
+```bash
+# Solution: Enable compression and caching
+# Already configured in next.config.js
+# Check network tab in browser dev tools
+```
+
+**Issue**: High memory usage
+- Monitor with `/health` endpoint
+- Check for memory leaks in custom code
+- Consider increasing server resources
+
+### Getting Help
+
+1. **Check logs**: Use `/health` endpoint for server status
+2. **Review documentation**: See comprehensive guides in `docs/` folder
+3. **Validate environment**: Run `npm run deploy:validate`
+4. **Test locally**: Use `npm run deploy:test` before deployment
+
+### Debug Mode
+
+Enable debug logging by setting:
+```bash
+NODE_ENV=development
+DEBUG=true
+```
+
+## �📚 Documentation
 
 Comprehensive documentation is available in the `docs/` directory:
 

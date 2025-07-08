@@ -1,0 +1,24 @@
+# Next.js Custom Server Configuration
+# Redirect all requests to the Node.js application
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ http://localhost:3000/$1 [P,L]
+
+# Security headers
+Header always set X-Frame-Options DENY
+Header always set X-Content-Type-Options nosniff
+Header always set Referrer-Policy "origin-when-cross-origin"
+
+# Cache static assets
+<FilesMatch "\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$">
+  ExpiresActive On
+  ExpiresDefault "access plus 1 year"
+  Header set Cache-Control "public, immutable"
+</FilesMatch>
+
+# Don't cache API routes
+<LocationMatch "^/api/">
+  Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+</LocationMatch>
